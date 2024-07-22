@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azp-agent
+  namespace: az-devops
+  labels:
+    app: azp-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azp-agent
+  template:
+    metadata:
+      labels:
+        app: azp-agent
+    spec:
+      containers:
+      - name: ${container_name}
+        image: ${image_name}
+        env:
+        - name: AZP_URL
+          valueFrom:
+            secretKeyRef:
+              name: azp-agent-info
+              key: AZP_URL
+        - name: AZP_POOL
+          valueFrom:
+            secretKeyRef:
+              name: azp-agent-info
+              key: AZP_POOL
+        - name: AZP_AGENT_NAME
+          value: ${agent_name}
+        - name: AZP_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: azp-agent-info
+              key: AZP_TOKEN
