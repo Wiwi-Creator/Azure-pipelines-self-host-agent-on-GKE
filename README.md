@@ -54,12 +54,14 @@ steps:
 ## Self-host agent deploy on kubernetes
 
 既然有了 Image 當然也可以部署在 Kubernetes上。
-以提升這個Agent他的Scalability , Flexibility 
-或是因應效能提升其資源調度。
+以提升這個Agent他的 Scalability , Flexibility 
+或是因應效能提升其資源調度(resources request)。
+
+檢視 /deploy Yaml
 
 - Pod or deployment.yaml
 - Make your variables in kubernetes secret
-  
+
 ## Refence 
 
 [Azure-self-host-agent](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=yaml,browser)

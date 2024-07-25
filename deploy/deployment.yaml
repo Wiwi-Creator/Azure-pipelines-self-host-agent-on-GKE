@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: azp-agent
-  namespace: az-devops
+  namespace: ${namesapce}
   labels:
     app: azp-agent
 spec:
