@@ -8,7 +8,7 @@
 
 ## Architecture
   
-  ![alt text](image.png)
+  ![alt text](.images/image.png)
 
 ## Build Self-host agent for Azure pipelines
 - Create agent-pool
